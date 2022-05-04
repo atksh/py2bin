@@ -12,7 +12,6 @@ python3.9 -m nuitka \
     --remove-output \
     --full-compat \
     --lto=yes \
-    --pgo \
     --python-flag=nosite,-O \
     --assume-yes-for-downloads \
     --static-libpython=yes \
