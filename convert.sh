@@ -2,6 +2,7 @@
 set -eux
 
 python3.9 -m nuitka \
+    --clang \
     --standalone \
     --onefile \
     --plugin-enable=anti-bloat \
@@ -12,6 +13,7 @@ python3.9 -m nuitka \
     --remove-output \
     --full-compat \
     --lto=yes \
+    --python-flag=nosite,-O \
     --assume-yes-for-downloads \
     --static-libpython=yes \
     --show-progress \
