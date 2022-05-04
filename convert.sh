@@ -11,7 +11,6 @@ python3.9 -m nuitka \
     --prefer-source-code \
     --remove-output \
     --full-compat \
-    --follow-imports \
     --lto=yes \
     --python-flag=nosite,-O \
     --assume-yes-for-downloads \
