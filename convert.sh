@@ -12,6 +12,7 @@ python3.9 -m nuitka \
     --remove-output \
     --full-compat \
     --lto=yes \
+    --pgo \
     --python-flag=nosite,-O \
     --assume-yes-for-downloads \
     --static-libpython=yes \
@@ -22,9 +23,13 @@ python3.9 -m nuitka \
 ./app.bin --appimage-extract
 rm ./app.bin
 cd squashfs-root
+
+# optimize
 upx -9 app
+# end
+
 cd ../
-appimagetool --comp xz squashfs-root
+appimagetool --comp gzip squashfs-root
 mv app* app.bin
 
 mv app.bin /output
