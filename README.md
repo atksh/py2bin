@@ -12,5 +12,5 @@ sh build.sh
 
 ### run in docker
 ```bash
-docker run --rm -it -v $(pwd):/root --workdir /root debian bash -c "./app.bin --appimage-extract && ./squashfs-root/app"
+docker run --rm -it -v $(pwd):/root --workdir /root debian ./app.bin --appimage-extract-and-run
 ```
