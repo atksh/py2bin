@@ -42,4 +42,5 @@ if __name__ == "__main__":
         data = f.readlines()
 
     logger.info(data)
+    input(">>> ")
     do()
