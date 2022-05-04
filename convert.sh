@@ -19,4 +19,12 @@ python3.9 -m nuitka \
     --include-data-file="./src/data.txt=./src/" \
     src/app.py
 
+./app.bin --appimage-extract
+rm ./app.bin
+cd squashfs-root
+upx -9 app
+cd ../
+appimagetool --comp xz squashfs-root
+mv app* app.bin
+
 mv app.bin /output

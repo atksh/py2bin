@@ -10,16 +10,23 @@ RUN apt-get update -y \
     python3-distutils \
     curl \
     file \
+    wget \
+    upx \
     ca-certificates \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
     && python3.9 get-pip.py \
     && python3.9 -m pip install nuitka zstandard
+    
+RUN wget "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage" \
+    && chmod a+x appimagetool-x86_64.AppImage \
+    && mv appimagetool-x86_64.AppImage /usr/local/bin/appimagetool
 
 FROM py2bin as base
 COPY src/requirements.txt .
 RUN python3.9 -m pip install --no-cache -r requirements.txt
 
 WORKDIR /work
+ENV CXXFLAGS "-O3 -pipe -fpid -fstack-protector-strong -fstack-clash-protection -fcf-protection -D_FORTIFY_SOURCE=2 -D_GLIBCXX_ASSERTIONS"
 COPY src /work/src
 COPY convert.sh /work
 RUN chmod +x /work/convert.sh
