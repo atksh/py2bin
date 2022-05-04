@@ -2,7 +2,7 @@
 ### build
 
 ```bash
-sh run.sh
+sh build.sh
 ```
 
 ### run

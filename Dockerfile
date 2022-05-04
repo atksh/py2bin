@@ -21,7 +21,7 @@ RUN python3.9 -m pip install --no-cache -r requirements.txt
 
 WORKDIR /work
 COPY src /work/src
-COPY build.sh /work
-RUN chmod +x /work/build.sh
-ENTRYPOINT /work/build.sh
+COPY convert.sh /work
+RUN chmod +x /work/convert.sh
+ENTRYPOINT /work/convert.sh
 
