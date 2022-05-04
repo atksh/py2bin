@@ -26,7 +26,7 @@ COPY src/requirements.txt .
 RUN python3.9 -m pip install --no-cache -r requirements.txt
 
 WORKDIR /work
-ENV CCFLAGS "-O3 -pipe -fpic -fstack-protector-strong -fstack-clash-protection -fcf-protection -D_FORTIFY_SOURCE=2 -D_GLIBCXX_ASSERTIONS"
+ENV CCFLAGS "-O3 -pipe -fPIC -fstack-protector-strong -fstack-clash-protection -fcf-protection -D_FORTIFY_SOURCE=2 -D_GLIBCXX_ASSERTIONS"
 COPY src /work/src
 COPY convert.sh /work
 RUN chmod +x /work/convert.sh
