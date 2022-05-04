@@ -7,9 +7,8 @@ python3.9 -m nuitka \
     --plugin-enable=anti-bloat \
     --plugin-enable=data-files \
     --plugin-enable=implicit-imports \
+    --include-package=numpy \
     --plugin-enable=numpy \
-    --plugin-enable=torch \
-    --plugin-enable=pyzmq \
     --python-flag=nosite \
     --prefer-source-code \
     --remove-output \
