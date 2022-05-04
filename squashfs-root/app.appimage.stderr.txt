@@ -1,0 +1,5 @@
+appimagetool, continuous build (commit 8bbf694), build <local dev build> built on 2020-12-31 11:48:33 UTC
+Using architecture x86_64
+Deleting pre-existing .DirIcon
+Creating .DirIcon symlink based on information from desktop file
+Generating squashfs...
