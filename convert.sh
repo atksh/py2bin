@@ -2,7 +2,6 @@
 set -eux
 
 python3.9 -m nuitka \
-    --clang \
     --standalone \
     --onefile \
     --plugin-enable=anti-bloat \

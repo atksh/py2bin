@@ -2,8 +2,6 @@ FROM debian:bullseye-slim as py2bin
 RUN apt-get update -y \
     && apt-get install --no-install-recommends -y \
     build-essential \
-    binutils \
-    binutils-gold \
     ccache \
     libfuse2 \
     patchelf \
@@ -12,7 +10,6 @@ RUN apt-get update -y \
     python3-distutils \
     curl \
     file \
-    clang \
     ca-certificates \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
     && python3.9 get-pip.py \
