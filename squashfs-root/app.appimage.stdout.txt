@@ -1,1 +1,0 @@
-WARNING: gpg2 or gpg command is missing, please install it if you want to create digital signatures
