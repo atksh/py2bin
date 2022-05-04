@@ -7,7 +7,7 @@ sh run.sh
 
 ### run
 ```bash
-./app/bin
+./app.bin
 ```
 
 ### run in docker
